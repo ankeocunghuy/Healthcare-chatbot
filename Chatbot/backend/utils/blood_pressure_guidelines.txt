@@ -1,0 +1,47 @@
+
+Blood Pressure Diagnosis Guidelines:
+
+1. **Normal Blood Pressure**:
+   - Systolic (upper number): Less than 120 mm Hg
+   - Diastolic (lower number): Less than 80 mm Hg
+
+   Recommended Action:
+   - Maintain a healthy lifestyle to keep your blood pressure in the normal range.
+
+2. **Elevated Blood Pressure**:
+   - Systolic: 120-129 mm Hg
+   - Diastolic: Less than 80 mm Hg
+
+   Recommended Action:
+   - Adopt a healthy lifestyle, including regular physical activity, a balanced diet, and stress management.
+
+3. **Hypertension Stage 1**:
+   - Systolic: 130-139 mm Hg
+   - Diastolic: 80-89 mm Hg
+
+   Recommended Action:
+   - Lifestyle changes are essential, and medication may be recommended based on risk factors for cardiovascular disease.
+
+4. **Hypertension Stage 2**:
+   - Systolic: 140 mm Hg or higher
+   - Diastolic: 90 mm Hg or higher
+
+   Recommended Action:
+   - Lifestyle changes and medication are necessary to lower blood pressure and reduce the risk of complications.
+
+5. **Hypertensive Crisis** (Consult your doctor immediately):
+   - Systolic: Higher than 180 mm Hg
+   - Diastolic: Higher than 120 mm Hg
+
+   Recommended Action:
+   - This is a medical emergency. Seek immediate medical attention to prevent life-threatening complications such as stroke or heart attack.
+   
+General Tips for Managing Blood Pressure:
+- Reduce salt (sodium) intake.
+- Eat a heart-healthy diet rich in fruits, vegetables, and whole grains.
+- Maintain a healthy weight.
+- Engage in regular physical activity.
+- Limit alcohol consumption.
+- Avoid smoking and manage stress.
+
+Note: Always consult your healthcare provider for personalized advice based on your individual health conditions.

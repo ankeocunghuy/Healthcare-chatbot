@@ -1,0 +1,12 @@
+Flask==3.0.3
+google-generativeai==0.7.2
+pypdf
+flask_cors
+fastembed
+qdrant-client
+flask_cors
+numpy
+pytest
+python-dotenv
+gunicorn
+onnxruntime==1.19.2

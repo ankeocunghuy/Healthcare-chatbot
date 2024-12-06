@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: 
+      - '**'  # Triggers on all branches
+  pull_request:
+    branches:
+      - '**'
+env:
+  QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}  
+  GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+  QDRANT_URL: ${{ secrets.QDRANT_URL }}
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2  
+      - uses: actions/setup-python@v2  
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.24.3'
+      
+      - name: Get frontend dependencies
+        run: cd frontend/my_app && flutter pub get
+
+      - run: pip install -r backend/requirements.txt  # install requirements to enable GitHub run tests
+      
+      - name: Test frontend
+        run: cd frontend/my_app && flutter test
+
+      - name: Test backend
+        run:  cd backend && pytest tests/

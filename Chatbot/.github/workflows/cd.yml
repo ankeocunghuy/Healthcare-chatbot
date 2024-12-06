@@ -1,0 +1,59 @@
+name: CD
+
+on:
+  push:
+<<<<<<< HEAD:.github/workflows/main.yml
+    branches: 
+       - IT-49-Finalise-handover-documentation-product-for-Client
+       - devel
+
+  # allows you to manually execute this pipeline from the Actions tab.
+  workflow_dispatch:
+=======
+    branches:
+      - devel
+      - main
+>>>>>>> origin/devel:.github/workflows/cd.yml
+
+env:
+  QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}  
+  GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+  QDRANT_URL: ${{ secrets.QDRANT_URL }}
+
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2  
+      - uses: actions/setup-python@v2  
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.24.3'
+      
+      - name: Get frontend dependencies
+        run: cd frontend/my_app && flutter pub get
+
+      - run: pip install -r backend/requirements.txt  # install requirements to enable GitHub run tests
+      
+      - name: Test frontend
+        run: cd frontend/my_app && flutter test
+
+      - name: Test backend
+        run:  cd backend && pytest tests/
+      
+  deploy:
+    runs-on: ubuntu-latest
+    needs: ci  # Ensure CI job completes successfully before running deploy
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: akhileshns/heroku-deploy@v3.12.12 #
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: curtin-chatbot-project
+          heroku_email: leslienguyen2101@gmail.com
+          appdir: backend

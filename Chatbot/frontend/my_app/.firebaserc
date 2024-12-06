@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "demo-frontend": "curtin-health-demo",
+    "default": "curtin-health-demo"
+  },
+  "targets": {},
+  "etags": {}
+}
